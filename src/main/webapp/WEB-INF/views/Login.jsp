@@ -11,14 +11,14 @@
 First JSP Page
 <div>Current date is <%=date%></div>
 
-
+${errorMessage}
 <form action = "/login.do" method = "post">
   First Name:
   <input type="text" name="name"><br><br>
    Password: 
    <input type="password" name="password"><br>
   <input type = "submit" value="Login">
-
+   
 </form>
 </body>
 

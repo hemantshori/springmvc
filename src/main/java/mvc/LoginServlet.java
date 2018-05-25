@@ -33,6 +33,9 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("password", password);
 			request.getRequestDispatcher("/WEB-INF/views/Welcome.jsp").forward(request, response);
 		}else{
+			ErrorMessages errorMessage = new ErrorMessages();
+			String message = errorMessage.loginFailErrorMessage();
+			request.setAttribute("errorMessage", message);
 			request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request, response);
 		}
 		
