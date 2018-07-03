@@ -1,4 +1,4 @@
-package mvc;
+package mvcUsingServlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request, response);
 		
 	}

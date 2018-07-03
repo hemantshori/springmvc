@@ -1,4 +1,4 @@
-package mvc;
+package mvcUsingServlets;
 
 public class UserValidationService {
 

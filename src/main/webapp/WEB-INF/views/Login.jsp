@@ -13,7 +13,7 @@ First JSP Page
 
 ${errorMessage}
 <form action = "/login.do" method = "post">
-  First Name:
+  UserName:
   <input type="text" name="name"><br><br>
    Password: 
    <input type="password" name="password"><br>
