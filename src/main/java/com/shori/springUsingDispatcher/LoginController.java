@@ -1,5 +1,6 @@
 package com.shori.springUsingDispatcher;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import mvcUsingServlets.UserValidationService;
 
 @Controller
 public class LoginController {
-
+@Autowired
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 
 	public String loginPage() {
@@ -26,19 +27,17 @@ public class LoginController {
 	public String welcomePage(@RequestParam String name, ModelMap model,@RequestParam String password)
 	{ 
 		// matching logic
-		UserValidationService match = new UserValidationService();
-		Boolean isUserValid = match.validateUser(name, password);
-		if(isUserValid)
+//		UserValidationService match = new UserValidationService();
+//		Boolean isUserValid = match.validateUser(name, password);
+		if(!UserValidationService.validateUser(name, password))
 		{
-		model.put("name", name);
-		model.put("password", password);
-		return "Welcome";
-		}else{
+			
+				model.put("errorMessage", "Invalid Credentials");
+				return "Login";
+			}
 
-			ErrorMessages message = new ErrorMessages();
-		String errorMessage =	message.loginFailErrorMessage();
-		model.put("errorMessage", errorMessage);
-			return "Login";
-		}
+			model.put("name", name);
+			return "Welcome";
+		
 	}
 }

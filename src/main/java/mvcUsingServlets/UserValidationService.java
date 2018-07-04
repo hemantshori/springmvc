@@ -1,18 +1,17 @@
 package mvcUsingServlets;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class UserValidationService {
 
 	
-	public Boolean validateUser(String userName, String password)
-	{
-		if(userName.equals("hemant")&& password.equals("hemant"))
-		
-			return true;
+	
+		public static boolean validateUser(String user, String password) {
+			
+			return user.equalsIgnoreCase("hemant") && password.equals("hemant");
+		}
 
-	return false;
-}
 	
 }
