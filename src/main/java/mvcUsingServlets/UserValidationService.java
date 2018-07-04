@@ -1,5 +1,8 @@
 package mvcUsingServlets;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class UserValidationService {
 
 	

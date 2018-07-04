@@ -12,7 +12,7 @@ First JSP Page
 <div>Current date is <%=date%></div>
 
 ${errorMessage}
-<form action = "/login.do" method = "post">
+<form action = "/spring-mvc/login" method = "POST">
   UserName:
   <input type="text" name="name"><br><br>
    Password: 
